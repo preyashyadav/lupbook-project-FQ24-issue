@@ -3,5 +3,5 @@ __pycache__/
 build/
 .vscode/
 node_modules/
+lupbookvm.js
 .venv/
-pandoc-3.1.5/

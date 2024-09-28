@@ -1,0 +1,76 @@
+/* Basic styling for the theme toggle switch */
+#theme-toggle {
+    -webkit-appearance: none;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: yellow; /* Default light mode switch color */
+    transition: background-color 0.3s ease;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+/* The circular toggle inside the switch */
+#theme-toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: white; /* Light theme */
+    transition: left 0.3s ease;
+}
+
+/* Dark mode background color for the toggle switch */
+#theme-toggle:checked {
+    background-color: #001f3f; /* Night blue for dark mode */
+}
+
+/* Move the circle to the right when toggled (dark mode) */
+#theme-toggle:checked::after {
+    left: 75%;
+}
+
+/* Transition for theme changes */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode background */
+body.bg-light-subtle {
+    background-color: #f8f9fa; /* Bootstrap light background color */
+    color: #000; /* Ensure text is readable on light background */
+}
+
+/* Light mode white background section */
+body.bg-white {
+    background-color: white;
+    color: black;
+}
+
+/* Dark mode background */
+body.bg-dark {
+    background-color: #343a40; /* Bootstrap dark background color */
+    color: white;
+}
+
+/* Dark mode text */
+body.text-white {
+    color: white;
+}
+
+/* Optional: Dark mode overrides for specific elements (e.g., navbar) */
+.navbar-dark {
+    background-color: #343a40; /* Dark background for navbar */
+    color: white;
+}
+
+.navbar-light {
+    background-color: #f8f9fa; /* Light background for navbar */
+    color: black;
+}
